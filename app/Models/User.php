@@ -9,6 +9,10 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    protected $primaryKey = 'nim'; // Set nim sebagai primary key
+    public $incrementing = false; // Karena nim bukan integer auto-increment
+    protected $keyType = 'string'; // Karena nim bertipe string
+    
     use HasFactory, Notifiable;
 
     /**
@@ -17,9 +21,12 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'nim',
+        'nama',
         'email',
+        'no_hp',
         'password',
+        'level',
     ];
 
     /**
@@ -29,7 +36,6 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
-        'remember_token',
     ];
 
     /**
