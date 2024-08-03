@@ -139,16 +139,10 @@ class AdminController extends Controller
     }
     public function loginPOST(Request $request)
     {
-        // Validasi input
-        $credentials = $request->validate([
-            'username' => 'required',
-            'password' => 'required',
-        ]);
-
         // Attempt to log the user in
         $request->validate([
-            'username' => 'required|string',
-            'password' => 'required|string',
+            'username' => 'required',
+            'password' => 'required',
         ]);
 
         if (Auth::guard('admin')->attempt($request->only('username', 'password'))) {
@@ -156,9 +150,7 @@ class AdminController extends Controller
         }
 
         // Return back with error if login fails
-        return back()->withErrors([
-            'error' => 'Username atau Password kamu salah',
-        ]);
+        return back()->with('error', 'Username atau Password kamu salah');
     }
 
     public function logout(Request $request)

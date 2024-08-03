@@ -11,6 +11,7 @@ Route::get('/', function () {
 
 // Group Route Admin name route prefix Admin
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+    Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
     Route::middleware(['guest:admin'])->group(function () {
         Route::get('/login', [AdminController::class, 'login'])->name('login');
         Route::post('/login', [AdminController::class, 'loginPOST'])->name('login.post');
@@ -40,6 +41,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 // Group Route Mahasiswa name route prefix mahasiswa
 Route::group(['prefix' => 'mahasiswa', 'as' => 'mahasiswa.'], function () {
     Route::post('/logout', [MahasiswaController::class, 'logout'])->name('logout');
+    Route::get('/', [MahasiswaController::class, 'index'])->name('index');
     Route::middleware(['guest:web'])->group(function () {
         Route::get('/login', [MahasiswaController::class, 'login'])->name('login');
         Route::post('/login', [MahasiswaController::class, 'loginPOST'])->name('login.post');
@@ -48,7 +50,6 @@ Route::group(['prefix' => 'mahasiswa', 'as' => 'mahasiswa.'], function () {
     });
 
     Route::middleware(['user'])->group(function () {
-        Route::get('/', [MahasiswaController::class, 'index'])->name('index');
         Route::get('/pengajuan-surat/aktivasi', [MahasiswaController::class, 'pengajuanSurat_aktivasi'])->name('pengajuan-surat.aktivasi');
         Route::get('/pengajuan-surat/magang', [MahasiswaController::class, 'pengajuanSurat_magang'])->name('pengajuan-surat.magang');
         Route::get('/pengajuan-surat/izin-penelitian', [MahasiswaController::class, 'pengajuanSurat_izin_penelitian'])->name('pengajuan-surat.izin-penelitian');
