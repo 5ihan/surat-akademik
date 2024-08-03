@@ -138,7 +138,7 @@
             <!-- Footer -->
             <div class="footer bg-light mt-5 p-4 rounded shadow-sm">
                 <h5 class="fw-bold text-primary">Esa Unggul</h5>
-                <p class="mb-0">Sistem Informasi Pengajuan Surat Akademik. Untuk informasi lebih lanjut, hubungi admin fakultas melalui WhatsApp: <a href="https://wa.me/082110860615" class="text-primary text-decoration-none fw-bold">Hubungi Admin</a>.</p>
+                <p class="mb-0">Sistem Informasi Pengajuan Surat Akademik. Untuk informasi lebih lanjut, hubungi admin fakultas melalui WhatsApp: <a href="https://wa.me/6282110860615" class="text-primary text-decoration-none fw-bold">Hubungi Admin</a>.</p>
             </div>
         </div>
 
