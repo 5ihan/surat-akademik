@@ -48,10 +48,10 @@
                 <li class="nav-item">
                     <form method="POST" action="{{ route('mahasiswa.logout') }}">
                         @csrf
-                        <a type="submit" class="nav-link">
+                        <button type="submit" class="nav-link" style="background:none;border:none;">
                             <i class="mdi mdi-logout menu-icon"></i>
                             <span class="menu-title">Logout</span>
-                        </a>
+                        </button>
                     </form>
                 </li>
             </ul>
