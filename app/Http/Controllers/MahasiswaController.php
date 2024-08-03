@@ -83,7 +83,7 @@ class MahasiswaController extends Controller
         $surat->prodi = $request->prodi ?? null;
         $surat->fakultas = $request->fakultas ?? null;
         $surat->jenis_surat = $request->jenis_surat ?? null;
-        $surat->status = 'pending';
+        $surat->status = 'Pending';
         $surat->save();
 
         return redirect()->route('mahasiswa.index')->with('success', 'Berhasil mengajukan Surat ' . $request->jenis_surat);
