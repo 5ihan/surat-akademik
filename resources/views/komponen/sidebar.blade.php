@@ -46,7 +46,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <form method="POST" action="{{ route('mahasiswa.logout') }}">
+                    <form method="POST" action="{{ route('admin.logout') }}">
                         @csrf
                         <button type="submit" class="nav-link" style="background:none;border:none;">
                             <i class="mdi mdi-logout menu-icon"></i>
