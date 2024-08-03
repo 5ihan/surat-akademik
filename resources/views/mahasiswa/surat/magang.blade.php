@@ -48,6 +48,10 @@
             }
 
             .footer {
+                position: fixed;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
                 text-align: center;
                 font-size: 12px;
                 margin-top: 40px;
@@ -57,14 +61,14 @@
 
     <body>
         <div class="header">
-            <img src="{{ asset('image/logo_ueu.png') }}" alt="Universitas Esa Unggul">
+            <img src="{{ public_path('image/logo_ueu.png') }}" alt="Universitas Esa Unggul">
         </div>
 
         <div class="content">
             <table style="width: 100%;">
                 <tr>
                     <td>Nomor</td>
-                    <td>: 021/EXT/KP-SI/FASILKOM/UEU/VII/2024</td>
+                    <td>: 021/EXT/KP-{{ $data->prodi == 'Sistem Informasi' ? 'SI' : 'IF' }}/FASILKOM/UEU/VII/2024</td>
                     <td style="text-align: end">Jakarta, {{ Carbon\Carbon::now()->translatedFormat('d F Y') }}</td>
                 </tr>
                 <tr>
@@ -94,7 +98,7 @@
                 <tbody>
                     <tr>
                         <td>1</td>
-                        <td>{{ $data->nim }}</td>
+                        <td>{{ $data->user->nim }}</td>
                         <td>{{ $data->user->nama }}</td>
                         <td>{{ $data->user->no_hp }}</td>
                     </tr>
@@ -113,8 +117,8 @@
 
         <div class="signature">
             <p>Program Studi {{ $data->prodi }}<br>Ketua</p>
-            <img width="1000" src="{{ asset('image/ttd_ka_' . $data->prodi . '.png') }}" alt="Signature {{ $data->prodi }}"><br>
-            <strong>Aniq Hanifatul Azizah, S.Kom, MMSI</strong>
+            <img width="1000" src="{{ public_path('image/ttd_ka_' . $data->prodi . '.png') }}" alt="Signature {{ $data->prodi }}"><br>
+            <strong>{{ $data->prodi == 'Sistem Informasi' ? 'Anik Hanifatul Azizah, S.Kom, M.IM' : 'M.Bahrul Ulum, S.Kom, M.Kom' }}</strong>
         </div>
 
         <div class="footer">

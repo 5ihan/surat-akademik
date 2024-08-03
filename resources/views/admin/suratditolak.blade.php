@@ -1,100 +1,72 @@
 @extends('komponen.index')
 
 @section('content')
-
-<!-- partial -->
-      <div class="main-panel">
+    <!-- partial -->
+    <div class="main-panel">
         <div class="content-wrapper">
-          <div class="row">
-            <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Surat Ditolak</h4>
-                  <p class="card-description">
-                    Add class <code>.table-hover</code>
-                  </p>
-                  <div class="table-responsive">
-                    <table class="table table-hover">
-                      <thead>
-                        <tr>
-                          <th>No.</th>
-                          <th>Jenis Surat</th>
-                          <th>Nama</th>
-                          <th>NIM</th>
-                          <th>Jurusan</th>
-                          <th>Jabatan & Nama Perusahaan</th>
-                          <th>Alamat Perusahaan</th>
-                          <th>Action</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>0</td>
-                          <td>Magang</td>
-                          <td>Tedy Andreanayan</td>
-                          <td>20180801015</td>
-                          <td>Teknologi Farmacka</td>
-                          <td>Universitas Esa Unggul</td>
-                          <td>J. Arjuna Utara No.9, Duri Kepa, Kec. Kb Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11510</td>
-                          <td><button type="button" class="btn btn-primary btn-sm"><i class="mdi mdi-arrow-up-bold"></i></button><br><br><button type="button" class="btn btn-danger btn-sm"><i class="mdi mdi-delete-outline"></i></button></td>
-                        </tr>
-                        <tr>
-                          <td>5</td>
-                          <td>Magang</td>
-                          <td>Tedy Andreanryan</td>
-                          <td>20180801015</td>
-                          <td>Teknologi Infromatika</td>
-                          <td>Universitas Esa Unggul</td>
-                          <td>J. Arjuna Utara No.9, Duri Kepa, Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11510</td>
-                          <td><button type="button" class="btn btn-primary btn-sm"><i class="mdi mdi-arrow-up-bold"></i></button><br><br><button type="button" class="btn btn-danger btn-sm"><i class="mdi mdi-delete-outline"></i></button></td>
-                        </tr>
-                        <tr>
-                          <td>5</td>
-                          <td>Magang</td>
-                          <td>Tedy Andreaneyah</td>
-                          <td>20180801015</td>
-                          <td>Teknologi Infromatika</td>
-                          <td>Universitas Esa Unggul</td>
-                          <td>J. Arjuna Utara No 9, Duri Kepa, Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11510</td>
-                          <td><button type="button" class="btn btn-primary btn-sm"><i class="mdi mdi-arrow-up-bold"></i></button><br><br><button type="button" class="btn btn-danger btn-sm"><i class="mdi mdi-delete-outline"></i></button></td>
-                        </tr>
-                        <tr>
-                          <td>7</td>
-                          <td>Magang</td>
-                          <td>Tedy Andreaneyah</td>
-                          <td>20180801015</td>
-                          <td>Teknologi Infromatika</td>
-                          <td>Universitas Esa Unggul</td>
-                          <td>J. Arjuna Utara No.9, Duri Kepa, Kec. Kb Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11510</td>
-                          <td><button type="button" class="btn btn-primary btn-sm"><i class="mdi mdi-arrow-up-bold"></i></button><br><br><button type="button" class="btn btn-danger btn-sm"><i class="mdi mdi-delete-outline"></i></button></td>
-                        </tr>
-                        <tr>
-                          <td>8</td>
-                          <td>Magang</td>
-                          <td>Tedy Andreanayan</td>
-                          <td>20180801015</td>
-                          <td>Teknologi Infromatika</td>
-                          <td>Universitas Esa Unggul</td>
-                          <td>J. Arjuna Utara No 9, Duri Kepa, Kec. Kb. Jeruk, Kota Jakarta Barat Daerah Khusus Ibukota Jakarta 11510</td>
-                          <td><button type="button" class="btn btn-primary btn-sm"><i class="mdi mdi-arrow-up-bold"></i></button><br><br><button type="button" class="btn btn-danger btn-sm"><i class="mdi mdi-delete-outline"></i></button></td>
-                        </tr>
-                        <tr>
-                          <td>9</td>
-                          <td>Magang</td>
-                          <td>Tedy Andreanayan</td>
-                          <td>20180801015</td>
-                          <td>Teknologi Infromatika</td>
-                          <td>Universitas Esa Unggul</td>
-                          <td>J. Arjuna Utara No.9, Duri Kepa, Kec. Kb Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11510</td>
-                          <td><button type="button" class="btn btn-primary btn-sm"><i class="mdi mdi-arrow-up-bold"></i></button><br><br><button type="button" class="btn btn-danger btn-sm"><i class="mdi mdi-delete-outline"></i></button></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+            <div class="row">
+                <div class="col-lg-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Surat Ditolak</h4>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Jenis Surat</th>
+                                            <th>Nama</th>
+                                            <th>NIM</th>
+                                            <th>Jurusan</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($data_surat as $key => $data)
+                                            @php
+                                                if ($data->status == 'Pending') {
+                                                    $badge = 'badge-warning';
+                                                } elseif ($data->status == 'Approve') {
+                                                    $badge = 'badge-success';
+                                                } else {
+                                                    $badge = 'badge-danger';
+                                                }
 
-        @endsection
+                                                if ($data->jenis_surat == 'Aktivasi') {
+                                                    $link = route('admin.generate-surat-aktivasi', [$data->id, $data->user->nim]);
+                                                } elseif ($data->jenis_surat == 'Izin Penelitian') {
+                                                    $link = route('admin.generate-surat-izin-penelitian', [$data->id, $data->user->nim]);
+                                                } elseif ($data->jenis_surat == 'Magang') {
+                                                    $link = route('admin.generate-surat-magang', [$data->id, $data->user->nim]);
+                                                } elseif ($data->jenis_surat == 'Rekomendasi Beasiswa') {
+                                                    $link = route('admin.generate-surat-rekomendasi-beasiswa', [$data->id, $data->user->nim]);
+                                                } else {
+                                                    $link = route('admin.generate-surat-lain', [$data->id, $data->user->nim]);
+                                                }
+                                            @endphp
+                                            <tr>
+                                                <td>{{ $key + 1 }}</td>
+                                                <td>{{ $data->jenis_surat }}</td>
+                                                <td>{{ $data->user->nama }}</td>
+                                                <td>{{ $data->user->nim }}</td>
+                                                <td>{{ $data->prodi }}</td>
+                                                <td>
+                                                    <div class="badge {{ $badge }}">{{ $data->status }}</div>
+                                                </td>
+                                                <td>
+                                                    <a type="button" href="{{ $link }}" target="_BLANK" class="btn btn-primary btn-sm"><span class="mdi mdi-eye"></span></a>
+                                                    {{-- <button type="button" class="btn btn-success btn-sm">Approve</button>
+                                                    <button type="button" class="btn btn-danger btn-sm">Reject</i></button> --}}
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endsection

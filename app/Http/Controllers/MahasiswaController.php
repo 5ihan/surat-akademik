@@ -14,13 +14,13 @@ class MahasiswaController extends Controller
     {
         return view('mahasiswa.index');
     }
-    public function pengajuanSurat_aktifasi()
+    public function pengajuanSurat_aktivasi()
     {
         $user = auth()->user();
 
         return view('mahasiswa.surat', [
             'user' => $user,
-            'jenis_surat' => 'Aktifasi',
+            'jenis_surat' => 'Aktivasi',
         ]);
     }
     public function pengajuanSurat_magang()
@@ -86,7 +86,7 @@ class MahasiswaController extends Controller
         $surat->status = 'pending';
         $surat->save();
 
-        return redirect()->route('index')->with('success', 'Berhasil mengajukan Surat');
+        return redirect()->route('mahasiswa.index')->with('success', 'Berhasil mengajukan Surat ' . $request->jenis_surat);
     }
 
     // Auth Proses
@@ -103,17 +103,15 @@ class MahasiswaController extends Controller
         ]);
 
         // Attempt to log the user in
-        if (Auth::attempt($credentials)) {
+        if (Auth::guard('web')->attempt($credentials)) {
             $request->session()->regenerate();
 
             // Redirect to route page or default to home
-            return redirect()->route('mahasiswa.index');
+            return redirect()->route('mahasiswa.index')->with('success', 'Login Berhasil!');
         }
 
         // Return back with error if login fails
-        return back()->withErrors([
-            'error' => 'NIM atau Password kamu salah',
-        ]);
+        return back()->with('error', 'NIM atau Password kamu salah');
     }
 
     // Register
@@ -154,12 +152,12 @@ class MahasiswaController extends Controller
 
     public function logout(Request $request)
     {
-        Auth::logout();
+        Auth::guard('web')->logout();
 
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
 
-        return redirect()->route('index')->with('success', 'Berhasil Logout');
+        return redirect()->route('mahasiswa.login')->with('success', 'Berhasil Logout');
     }
 }

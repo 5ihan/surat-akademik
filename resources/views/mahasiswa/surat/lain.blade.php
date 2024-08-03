@@ -98,7 +98,7 @@
         <div class="watermark"></div>
 
         <div class="header">
-            <img src="{{ asset('image/logo_ueu.png') }}" alt="Universitas Esa Unggul">
+            <img src="{{ public_path('image/logo_ueu.png') }}" alt="Universitas Esa Unggul">
         </div>
 
         <div class="title">
@@ -113,7 +113,7 @@
             <table class="info-table">
                 <tr>
                     <td>Nama</td>
-                    <td>: Dr. Vivit Tjundjingasih, ST., M.Sc, MM</td>
+                    <td>: Dr. Vivit Tundjungsari, ST., M.Sc, MM</td>
                 </tr>
                 <tr>
                     <td>Jabatan</td>
@@ -125,7 +125,7 @@
                 </tr>
                 <tr>
                     <td>Email</td>
-                    <td>: vivit.tjundjingasih@esaunggul.ac.id</td>
+                    <td>: vitri.tundjungsari@esaunggul.ac.id</td>
                 </tr>
                 <tr>
                     <td>Telepon/HP</td>
@@ -188,8 +188,8 @@
 
             <div class="signature">
                 <p>Dekan Fakultas Ilmu Komputer</p>
-                <img src="{{ asset('image/ttd_dekan.png') }}" alt="Signature"><br>
-                <strong>Dr. Vivit Tjundjingasih, ST., M.Sc, MM</strong><br>
+                <img src="{{ public_path('image/ttd_dekan.png') }}" alt="Signature"><br>
+                <strong>Dr. Vitri Tundjungsari, ST., M.Sc, MM</strong><br>
                 <span>NIP/NIDN 222010872 / 301057601</span>
             </div>
 

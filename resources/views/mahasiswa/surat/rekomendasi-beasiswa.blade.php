@@ -45,6 +45,10 @@
             }
 
             .footer {
+                position: fixed;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
                 text-align: center;
                 font-size: 12px;
                 margin-top: 40px;
@@ -54,13 +58,13 @@
 
     <body>
         <div class="header">
-            <img src="{{ asset('image/logo_ueu.png') }}" alt="Universitas Esa Unggul">
+            <img src="{{ public_path('image/logo_ueu.png') }}" alt="Universitas Esa Unggul">
             <p style="margin: 0;padding:0">Jakarta, {{ Carbon\Carbon::now()->translatedFormat('d F Y') }}</p>
         </div>
 
         <div class="title">
             <span style="font-weight: bold;">SURAT KETERANGAN</span><br>
-            No. {{ $data->id }}/S.Ket/Kaprodi-SI/Fasilkom/UEU/VII/{{ date('Y') }}
+            No. {{ $data->id }}/S.Ket/Kaprodi-{{ $data->prodi == 'Sistem Informasi' ? 'SI' : 'IF' }}/Fasilkom/UEU/VII/{{ date('Y') }}
         </div>
 
         <div class="content">
@@ -69,7 +73,7 @@
             <table style="margin-left: 50px">
                 <tr>
                     <td>Nama</td>
-                    <td>: Anik Hanifatul Azizah, S.Kom, MMSI</td>
+                    <td>: {{ $data->prodi == 'Sistem Informasi' ? 'Anik Hanifatul Azizah, S.Kom, M.IM' : 'M.Bahrul Ulum, S.Kom, M.Kom' }}</td>
                 </tr>
                 <tr>
                     <td>Jabatan</td>
@@ -83,7 +87,7 @@
             <table style="margin-left: 50px">
                 <tr>
                     <td>Nama</td>
-                    <td>: {{ $data->nama }}</td>
+                    <td>: {{ $data->user->nama }}</td>
                 </tr>
             </table>
             </p>
@@ -95,8 +99,8 @@
 
         <div class="signature">
             <p>Jakarta, {{ Carbon\Carbon::now()->translatedFormat('d F Y') }}</p>
-            <img width="1000" src="{{ asset('image/ttd_ka_' . $data->prodi . '.png') }}" alt="Signature {{ $data->prodi }}"><br>
-            <strong>Anik Hanifatul Azizah, S.Kom, M.IM<br>
+            <img width="1000" src="{{ public_path('image/ttd_ka_' . $data->prodi . '.png') }}" alt="Signature {{ $data->prodi }}"><br>
+            <strong>{{ $data->prodi == 'Sistem Informasi' ? 'Anik Hanifatul Azizah, S.Kom, M.IM' : 'M.Bahrul Ulum, S.Kom, M.Kom' }}<br>
                 Kaprodi {{ $data->prodi }}</strong>
         </div>
 

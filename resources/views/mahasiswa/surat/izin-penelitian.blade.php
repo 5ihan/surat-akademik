@@ -69,6 +69,10 @@
             }
 
             .footer {
+                position: fixed;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
                 text-align: center;
                 font-size: 12px;
                 margin-top: 40px;
@@ -78,7 +82,7 @@
 
     <body>
         <div class="header">
-            <img src="{{ asset('image/logo_ueu.png') }}" alt="Universitas Esa Unggul">
+            <img src="{{ public_path('image/logo_ueu.png') }}" alt="Universitas Esa Unggul">
         </div>
 
         <div class="header_surat">
@@ -87,7 +91,7 @@
                 <table>
                     <tr>
                         <td>Nomor</td>
-                        <td>: {{ $data->id }}-031/SP/KAPRODI-SI/FASILKOM/UEU/EXT/VII/{{ date('Y') }}</td>
+                        <td>: {{ $data->id }}-031/SP/KAPRODI-{{ $data->prodi == 'Sistem Informasi' ? 'SI' : 'IF' }}/FASILKOM/UEU/EXT/VII/{{ date('Y') }}</td>
                     </tr>
                     <tr>
                         <td>Lampiran</td>
@@ -136,8 +140,8 @@
         <div class="signature">
             <p>Hormat kami,<br>
                 Ketua Program Studi {{ $data->prodi }}</p>
-            <img width="1000" src="{{ asset('image/ttd_ka_' . $data->prodi . '.png') }}" alt="Signature {{ $data->prodi }}"><br>
-            <strong>Aniq Hanifatul Azizah, S.Kom, M.IM</strong>
+            <img width="1000" src="{{ public_path('image/ttd_ka_' . $data->prodi . '.png') }}" alt="Signature {{ $data->prodi }}"><br>
+            <strong>{{ $data->prodi == 'Sistem Informasi' ? 'Anik Hanifatul Azizah, S.Kom, M.IM' : 'M.Bahrul Ulum, S.Kom, M.Kom' }}</strong>
         </div>
 
         <p>C.c:

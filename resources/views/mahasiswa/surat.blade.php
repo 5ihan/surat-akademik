@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Form Surat Aktifasi</title>
+        <title>Form Surat Aktivasi</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     </head>
 
@@ -83,7 +83,7 @@
                             </div>
                         @endif
 
-                        @if ($jenis_surat != 'Aktifasi' && $jenis_surat != 'Izin Penelitian' && $jenis_surat != 'Rekomendasi Beasiswa' && $jenis_surat != 'Lain')
+                        @if ($jenis_surat != 'Aktivasi' && $jenis_surat != 'Izin Penelitian' && $jenis_surat != 'Rekomendasi Beasiswa' && $jenis_surat != 'Lain')
                             <div class="mb-3">
                                 <label for="kepada" class="form-label">Kepada</label>
                                 <input type="text" name="kepada" class="form-control" id="kepada" placeholder="Masukkan Nama Penerima">
@@ -120,7 +120,7 @@
                                 <textarea name="deskripsi_magang" class="form-control" id="deskripsi_magang" placeholder="Masukkan Deskripsi Magang"></textarea>
                             </div>
                         @endif
-                        @if ($jenis_surat == 'Aktifasi' || ($jenis_surat == 'Izin Penelitian' && $jenis_surat != 'Magang'))
+                        @if ($jenis_surat == 'Aktivasi' || ($jenis_surat == 'Izin Penelitian' && $jenis_surat != 'Magang'))
                             <div class="mb-3">
                                 <label for="tembusan" class="form-label">Tembusan</label>
                                 <input type="text" name="tembusan" value="{{ old('tembusan') }}" class="form-control" id="tembusan" placeholder="Masukkan Tembusan Kamu" required>
@@ -142,8 +142,10 @@
             </div>
         </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN6jIeHz" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         <script>
             ClassicEditor
@@ -154,6 +156,24 @@
                 .catch(error => {
                     console.error(error);
                 });
+        </script>
+
+        <script>
+            // Implement Sweetalert ketika ada session error dan success dari PHP
+            @if (session('error'))
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: '{{ session('error') }}'
+                })
+            @endif
+            @if (session('success'))
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: '{{ session('success') }}'
+                })
+            @endif
         </script>
     </body>
 

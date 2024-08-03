@@ -14,26 +14,6 @@
                 <div class="card-body">
                     <h3 class="card-title text-center mb-4">Register Mahasiswa</h3>
                     <p class="text-center text-muted mb-4">Silakan isi form di bawah ini untuk membuat akun baru.</p>
-                    @if (session('success'))
-                        <div class="alert alert-danger d-flex align-items-center" role="alert">
-                            <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:">
-                                <use xlink:href="#exclamation-triangle-fill" />
-                            </svg>
-                            <div>
-                                {{ session('success') }}
-                            </div>
-                        </div>
-                    @endif
-                    @if (session('error'))
-                        <div class="alert alert-danger d-flex align-items-center" role="alert">
-                            <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:">
-                                <use xlink:href="#exclamation-triangle-fill" />
-                            </svg>
-                            <div>
-                                {{ session('error') }}
-                            </div>
-                        </div>
-                    @endif
                     <form method="POST" action="{{ route('mahasiswa.register.post') }}">
                         @csrf
                         <div class="mb-3">
@@ -71,7 +51,27 @@
             </div>
         </div>
 
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <script>
+            // Implement Sweetalert ketika ada session error dan success dari PHP
+            @if (session('error'))
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: '{{ session('error') }}'
+                })
+            @endif
+            @if (session('success'))
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: '{{ session('success') }}'
+                })
+            @endif
+        </script>
     </body>
 
 </html>
