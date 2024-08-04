@@ -44,7 +44,7 @@
                             <button type="submit" class="btn btn-outline-secondary btn-lg">Logout</button>
                         </form>
                     @endif
-                    <p class="mt-4 text-muted">Untuk informasi lebih lanjut, hubungi admin fakultas melalui <a href="https://wa.me/6282110860615" class="text-decoration-none">WhatsApp</a>.</p>
+                    <p class="mt-4 text-muted">Untuk informasi lebih lanjut, hubungi admin fakultas melalui <a href="https://wa.me/6285715593359" class="text-decoration-none">WhatsApp</a>.</p>
                 </div>
             </div>
         </div>
